@@ -17,37 +17,57 @@
     <br>
     <div class="container">
 
-        <form>
+        <form action="../CRUD/insertarDatos.php" method="POST">
             <div class="mb-3">
-                <label for="" class="form-label">Categoria</label>
-                <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
-                <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
+            <label class="form-label">Categoria</label>
+            <select class="form-select" name="categoriaP">
+                <option selected disabled>--Seleccionar Categoría--</option>
+                <?php
+                    include("../config/conexion.php");
+                    $sql=$conexion -> query("SELECT * FROM categoria");
+                    while($resultado=$sql->fetch_assoc()){
+                        echo "<option value= '".$resultado['id']."'>".$resultado['nombreCategoria']."</option>";
+                    }
+                ?>
+            </div>
+            </select>
+            
+            <div class="mb-3">
+            <label class="form-label">Marca</label>
+            <select class="form-select" name="marcaP">
+                <option selected disabled>--Seleccionar Marca--</option>
+                <?php
+                    include("../config/conexion.php");
+                    $sql=$conexion -> query("SELECT * FROM marcas");
+                    while($resultado=$sql->fetch_assoc()){
+                        echo "<option value= '".$resultado['id']."'>".$resultado['nombreMarca']."</option>";
+                    }
+                ?>
+            </div>
+            </select>
+
+            <div class="mb-3">
+                <label class="form-label">Nombre</label>
+                <input class="form-control" name="nombre">
             </div>
             <div class="mb-3">
-                <label for="exampleInputPassword1" class="form-label">Password</label>
-                <input type="password" class="form-control" id="exampleInputPassword1">
+                <label class="form-label">Descripción</label>
+                <input class="form-control" name="descripcion">
             </div>
             <div class="mb-3">
-                <label for="exampleInputPassword1" class="form-label">Password</label>
-                <input type="password" class="form-control" id="exampleInputPassword1">
+                <label class="form-label">Cantidad</label>
+                <input class="form-control" name="cantidad">
             </div>
             <div class="mb-3">
-                <label for="exampleInputPassword1" class="form-label">Password</label>
-                <input type="password" class="form-control" id="exampleInputPassword1">
+                <label class="form-label">Precio</label>
+                <input class="form-control" name="precio">
             </div>
-            <div class="mb-3">
-                <label for="exampleInputPassword1" class="form-label">Password</label>
-                <input type="password" class="form-control" id="exampleInputPassword1">
-            </div>
-            <div class="mb-3">
-                <label for="exampleInputPassword1" class="form-label">Password</label>
-                <input type="password" class="form-control" id="exampleInputPassword1">
-            </div>
-            <div class="mb-3 form-check">
-                <input type="checkbox" class="form-check-input" id="exampleCheck1">
-                <label class="form-check-label" for="exampleCheck1">Check me out</label>
-            </div>
-            <button type="submit" class="btn btn-primary">Submit</button>
+            
+            <div class="text-center">
+            <button type="submit" class="btn btn-danger">Enviar</button>
+            <a href="../index.php" class="btn btn-dark">Regresar</a>
+            </div>   
+        </div>
         </form>
 
     </div>
