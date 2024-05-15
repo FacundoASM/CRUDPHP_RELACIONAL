@@ -48,7 +48,7 @@
                         <th scope="row"><?php echo $resultado['descripcionProducto']?></th>
                         <th scope="row"><?php echo $resultado['nombre']?></th>
                         <th>
-                            <a href="" class="btn btn-warning">Editar</a>
+                            <a href="formularios/editarForm.php? id=<?php echo $resultado['idProducto'] ?>" class="btn btn-warning">Editar</a>
                             <a href="" class="btn btn-danger">Eliminar</a>
                         </th>
                     </tr>

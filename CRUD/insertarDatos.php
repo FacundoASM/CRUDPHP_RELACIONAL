@@ -6,11 +6,10 @@ $categoria = $_POST['categoriaP'];
 $marca = $_POST['marcaP'];
 $nombre = $_POST['nombre'];
 $descripcion = $_POST['descripcion'];
-$cantidad = $_POST['cantidad'];
 $precio = $_POST['precio'];
 
-$sql = "INSERT INTO productos(categoriaId, marcaId, precio, descripcionProducto, nombre) VALUES
-('$categoria','$marca','$nombre','$descripcion','$cantidad','$precio')";
+$sql = "INSERT INTO productos(categoriaId, marcaId ,nombre, precio, descripcionProducto) VALUES
+('$categoria','$marca','$nombre','$precio','$descripcion');";
 
 $resultado= mysqli_query($conexion, $sql);
 
@@ -19,9 +18,5 @@ if($resultado === true){
 }else{
     echo"Datos NO insertados";
 }
-
-
-
-
 
 ?>

@@ -55,10 +55,6 @@
                 <input class="form-control" name="descripcion">
             </div>
             <div class="mb-3">
-                <label class="form-label">Cantidad</label>
-                <input class="form-control" name="cantidad">
-            </div>
-            <div class="mb-3">
                 <label class="form-label">Precio</label>
                 <input class="form-control" name="precio">
             </div>
